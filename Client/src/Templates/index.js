@@ -1,4 +1,4 @@
-import Birthday1 from "./Birthdays/birthday1";
+import Birthday1 from "./Birthdays/Birthday1";
 import Birthday2 from "./Birthdays/Birthday2";
 import Eid1 from "./Eid/Eid1";
 import Eid2 from "./Eid/Eid2";
