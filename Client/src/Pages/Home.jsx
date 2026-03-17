@@ -8,7 +8,7 @@ const VITE_FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL
 
 export default function Home() {
     const [occasion, setOccasion] = useState("all");
-    const [recipientName, setRecipientName] = useState("Ahmed");
+    const [recipientName, setRecipientName] = useState("Noor");
     const [bdyname, setbdyname] = useState("Julie")
     const [message, setMessage] = useState("Wishing you joy, peace, and blessings on this special day 🌙");
     const [bdymessage, setbdymessage] = useState("A very happy birthday to my favorite human")
