@@ -93,8 +93,7 @@ export default function Home() {
             </div>
 
             {/* ── Body ── */}
-            <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row" }}>
-
+            <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", overflowX: "hidden" }}>
                 {/* ── Left Panel (desktop only) ── */}
                 {!isMobile && (
                     <div style={{ width: "30vw", display: "flex", flexDirection: "column", height: "calc(100vh - 68px)", background: "#fdf8f0", borderRight: "2px dashed #c8a87a" }}>
@@ -122,7 +121,7 @@ export default function Home() {
                 )}
 
                 {/* ── Right Panel ── */}
-                <div style={{ width: isMobile ? "100vw" : "70vw", background: "#f5f0e8", display: "flex", flexDirection: "column", justifyContent: isMobile ? "flex-start" : "center", alignItems: "center", height: isMobile ? "auto" : "calc(100vh - 68px)", overflow: isMobile ? "visible" : "hidden", gap: 16, padding: isMobile ? "20px 16px" : 20, position: "relative" }}>
+                <div style={{ width: isMobile ? "100%" : "70vw", background: "#f5f0e8", display: "flex", flexDirection: "column", justifyContent: isMobile ? "flex-start" : "center", alignItems: "center", height: isMobile ? "auto" : "calc(100vh - 68px)", overflow: isMobile ? "visible" : "hidden", gap: 16, padding: isMobile ? "20px 16px" : 20, position: "relative" }}>
 
                     {currentTemplate.occasion === "eid" ? <>
                         <div style={{ flex: isMobile ? "none" : 1, minHeight: 0, display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
