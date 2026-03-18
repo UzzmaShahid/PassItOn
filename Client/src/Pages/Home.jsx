@@ -13,7 +13,7 @@ export default function Home() {
     const [message, setMessage] = useState("Wishing you joy, peace, and blessings on this special day 🌙");
     const [bdymessage, setbdymessage] = useState("A very happy birthday to my favorite human")
     const [font, setFont] = useState("'Playfair Display', serif");
-const [date, setDate] = useState(new Date().toISOString().split('T')[0])
+    const [date, setDate] = useState(new Date().toISOString().split('T')[0])
     const [location, setLocation] = useState("New York");
     const [age, setAge] = useState(20);
     const [template, settemplate] = useState(templates)
@@ -21,12 +21,12 @@ const [date, setDate] = useState(new Date().toISOString().split('T')[0])
     const [activeTab, setactiveTab] = useState("template")
     const [showSheet, setShowSheet] = useState(false)
     const [selectedIndex, setSelectedIndex] = useState(0)
-const [isMobile, setIsMobile] = useState(window.innerWidth <= 1070)
-useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 1070)
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-}, [])
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1070)
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 1070)
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
     async function getLinkofEid(recipientName, message, font, templateid, occasion) {
         try {
             const result = await postCard(recipientName, message, font, templateid, occasion)
@@ -69,12 +69,12 @@ useEffect(() => {
                 flexWrap: isMobile ? "wrap" : "nowrap",
                 gap: isMobile ? 6 : 0,
                 position: "relative",
-                overflow: "hidden",
+                overflow: "visible",
             }}>
                 <div style={{ position: "relative", display: "inline-block" }}>
                     <div style={{ position: "absolute", top: 4, left: "50%", transform: "translateX(-50%)", width: 10, height: 10, borderRadius: "50%", background: "#c84040", border: "1.5px solid #a02020" }} />
                     <li style={{ fontFamily: "Caveat, cursive", fontSize: isMobile ? 22 : 26, fontWeight: 700, color: "#5a3e28", listStyle: "none", padding: "4px 12px", background: "#fff8e8", border: "1px solid #e0c898", transform: "rotate(-1.5deg)", display: "inline-block" }}>
-                       ✉ Pass It On 
+                        ✉ Pass It On
 
                     </li>
                 </div>
@@ -184,51 +184,51 @@ useEffect(() => {
                         </div>
 
                         {/* 2 column grid */}
-{/* Single template with prev/next */}
-<div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-    
-    {/* Prev arrow */}
-    <div 
-        onClick={() => setSelectedIndex(i => Math.max(0, i - 1))}
-        style={{ fontSize: 24, color: selectedIndex === 0 ? "#d4c0a0" : "#7a5a30", cursor: "pointer", padding: "0 8px", userSelect: "none" }}
-    >←</div>
+                        {/* Single template with prev/next */}
+                        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
 
-    {/* Single template */}
-    <div style={{ flex: 1 }}>
-        {(() => {
-            const i = filteredTemplates[selectedIndex]
-            if (!i) return null
-            return (
-                <div
-                    onClick={() => { setCurrentTemplate(i); setShowSheet(false) }}
-                    style={{ borderRadius: 16, overflow: "hidden", cursor: "pointer", border: currentTemplate.id === i.id ? "2px dashed #c8a040" : "2px dashed #d4c0a0", background: "#fff" }}
-                >
-                    <div style={{ pointerEvents: "none" }}>
-                        {i.occasion === 'eid' 
-                            ? <i.component name={recipientName} message={message} font={font} /> 
-                            : <i.component name={bdyname} message={bdymessage} date={date} location={location} age={age} />
-                        }
-                    </div>
-                    <div style={{ padding: "8px 12px", fontFamily: "Caveat, cursive", fontSize: 15, color: currentTemplate.id === i.id ? "#8a6010" : "#a08060", background: currentTemplate.id === i.id ? "#fffdf0" : "#fdf8f0", textAlign: "center" }}>{i.name}</div>
-                </div>
-            )
-        })()}
-    </div>
+                            {/* Prev arrow */}
+                            <div
+                                onClick={() => setSelectedIndex(i => Math.max(0, i - 1))}
+                                style={{ fontSize: 24, color: selectedIndex === 0 ? "#d4c0a0" : "#7a5a30", cursor: "pointer", padding: "0 8px", userSelect: "none" }}
+                            >←</div>
 
-    {/* Next arrow */}
-    <div 
-        onClick={() => setSelectedIndex(i => Math.min(filteredTemplates.length - 1, i + 1))}
-        style={{ fontSize: 24, color: selectedIndex === filteredTemplates.length - 1 ? "#d4c0a0" : "#7a5a30", cursor: "pointer", padding: "0 8px", userSelect: "none" }}
-    >→</div>
+                            {/* Single template */}
+                            <div style={{ flex: 1 }}>
+                                {(() => {
+                                    const i = filteredTemplates[selectedIndex]
+                                    if (!i) return null
+                                    return (
+                                        <div
+                                            onClick={() => { setCurrentTemplate(i); setShowSheet(false) }}
+                                            style={{ borderRadius: 16, overflow: "hidden", cursor: "pointer", border: currentTemplate.id === i.id ? "2px dashed #c8a040" : "2px dashed #d4c0a0", background: "#fff" }}
+                                        >
+                                            <div style={{ pointerEvents: "none" }}>
+                                                {i.occasion === 'eid'
+                                                    ? <i.component name={recipientName} message={message} font={font} />
+                                                    : <i.component name={bdyname} message={bdymessage} date={date} location={location} age={age} />
+                                                }
+                                            </div>
+                                            <div style={{ padding: "8px 12px", fontFamily: "Caveat, cursive", fontSize: 15, color: currentTemplate.id === i.id ? "#8a6010" : "#a08060", background: currentTemplate.id === i.id ? "#fffdf0" : "#fdf8f0", textAlign: "center" }}>{i.name}</div>
+                                        </div>
+                                    )
+                                })()}
+                            </div>
 
-</div>
+                            {/* Next arrow */}
+                            <div
+                                onClick={() => setSelectedIndex(i => Math.min(filteredTemplates.length - 1, i + 1))}
+                                style={{ fontSize: 24, color: selectedIndex === filteredTemplates.length - 1 ? "#d4c0a0" : "#7a5a30", cursor: "pointer", padding: "0 8px", userSelect: "none" }}
+                            >→</div>
 
-{/* Dots indicator */}
-<div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 12 }}>
-    {filteredTemplates.map((_, i) => (
-        <div key={i} onClick={() => setSelectedIndex(i)} style={{ width: 8, height: 8, borderRadius: "50%", background: i === selectedIndex ? "#c8a040" : "#d4c0a0", cursor: "pointer" }} />
-    ))}
-</div>
+                        </div>
+
+                        {/* Dots indicator */}
+                        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 12 }}>
+                            {filteredTemplates.map((_, i) => (
+                                <div key={i} onClick={() => setSelectedIndex(i)} style={{ width: 8, height: 8, borderRadius: "50%", background: i === selectedIndex ? "#c8a040" : "#d4c0a0", cursor: "pointer" }} />
+                            ))}
+                        </div>
                     </div>
                 </>
             )}
