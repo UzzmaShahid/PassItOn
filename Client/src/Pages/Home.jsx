@@ -121,7 +121,7 @@ export default function Home() {
                 )}
 
                 {/* ── Right Panel ── */}
-                <div style={{ width: isMobile ? "100%" : "70vw", background: "#f5f0e8", display: "flex", flexDirection: "column", justifyContent: isMobile ? "flex-start" : "center", alignItems: "center", height: isMobile ? "auto" : "calc(100vh - 68px)", overflow: isMobile ? "visible" : "hidden", gap: 16, padding: isMobile ? "20px 16px" : 20, position: "relative" }}>
+                <div style={{ width: isMobile ? "100%" : "70vw",boxSizing: "border-box", background: "#f5f0e8", display: "flex", flexDirection: "column", justifyContent: isMobile ? "flex-start" : "center", alignItems: "center", height: isMobile ? "auto" : "calc(100vh - 68px)", overflow: isMobile ? "visible" : "hidden", gap: 16, padding: isMobile ? "20px 16px" : 20, position: "relative" }}>
 
                     {currentTemplate.occasion === "eid" ? <>
                         <div style={{ flex: isMobile ? "none" : 1, minHeight: 0, display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
