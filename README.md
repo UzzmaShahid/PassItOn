@@ -1,10 +1,10 @@
-# YonderBook
+# Pass It On
 
 A full-stack travel journal application where users can select, customize and share card templates for different occassions.
 
 ## Live link 
 
-https://Pass-It-On.vercel.app/
+https://pass-it-on-zfmi.vercel.app/
 
 ## Tech Stack
 
