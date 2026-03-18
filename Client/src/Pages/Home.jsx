@@ -85,8 +85,7 @@ export default function Home() {
                     </li>
                 )}
 
-                <ul style={{ listStyle: "none", display: "flex", gap: 6, padding: 0, margin: 0, alignItems: "center" }}>
-                    {!isMobile && <span style={{ fontSize: 14, color: "#a08060", opacity: 0.6, marginRight: 4 }}>✂</span>}
+                <ul style={{ listStyle: "none", display: "flex", gap: 6, padding: "0 8px 0 0", margin: 0, alignItems: "center" }}>                    {!isMobile && <span style={{ fontSize: 14, color: "#a08060", opacity: 0.6, marginRight: 4 }}>✂</span>}
                     <li><button style={{ fontFamily: "Caveat, cursive", fontSize: isMobile ? 13 : 16, padding: isMobile ? "4px 10px" : "5px 16px", borderRadius: 3, cursor: "pointer", background: "#fff0d4", border: `1.5px solid ${occasion === "all" ? "#c8a040" : "#e0c898"}`, color: "#7a5a10", transform: "rotate(-1deg)", fontWeight: occasion === "all" ? 700 : 500 }} onClick={() => setOccasion("all")}>All</button></li>
                     <li><button style={{ fontFamily: "Caveat, cursive", fontSize: isMobile ? 13 : 16, padding: isMobile ? "4px 10px" : "5px 16px", borderRadius: 3, cursor: "pointer", background: "#fde8e8", border: `1.5px solid ${occasion === "birthday" ? "#d48080" : "#f0c0c0"}`, color: "#7a3030", transform: "rotate(1.5deg)", fontWeight: occasion === "birthday" ? 700 : 500 }} onClick={() => setOccasion("birthday")}>Birthday</button></li>
                     <li><button style={{ fontFamily: "Caveat, cursive", fontSize: isMobile ? 13 : 16, padding: isMobile ? "4px 10px" : "5px 16px", borderRadius: 3, cursor: "pointer", background: "#e8f0e0", border: `1.5px solid ${occasion === "eid" ? "#80a860" : "#c0d8a8"}`, color: "#385820", transform: "rotate(-1deg)", fontWeight: occasion === "eid" ? 700 : 500 }} onClick={() => setOccasion("eid")}>Eid</button></li>
