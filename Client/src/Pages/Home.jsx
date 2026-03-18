@@ -61,7 +61,7 @@ export default function Home() {
             <div style={{
                 background: "#fdf8f0",
                 borderBottom: "2px dashed #c8a87a",
-                padding: isMobile ? "8px 20px 8px 14px" : "0 28px",
+                padding: isMobile ? "8px 32px 8px 14px" : "0 28px",
                 height: isMobile ? "auto" : 68,
                 display: "flex",
                 alignItems: "center",
