@@ -25,5 +25,3 @@ mongoose.connect(`${MONGODB_URL}/PassItOn`).then(() => {
         console.log("Server running at http://localhost:3000")
     })
 })
-
-
